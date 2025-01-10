@@ -1,0 +1,17 @@
+.main {
+  min-height: calc(100vh - 70px);
+  background: var(--background-gradient);
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1rem;
+  }
+}

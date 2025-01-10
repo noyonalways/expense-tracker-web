@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expense Tracker Web Application
 
-## Getting Started
+A modern expense tracking application built with Next.js that helps users manage their expenses and set spending limits by category.
 
-First, run the development server:
+## Features
+
+- 🔐 User Authentication (Login/Register)
+- 💰 Track Expenses by Category
+- 🎯 Set Monthly Spending Limits
+- 📊 View Expense Analytics
+- 💼 Category-wise Expense Management
+- 🎨 Modern and Responsive UI
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Redux Toolkit (State Management)
+- RTK Query (API Integration)
+- Zod (Form Validation)
+- CSS Modules (Styling)
+
+## Local Setup
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/noyonalways/expense-tracker-web.git
+cd expense-tracker-web
+```
+
+2. Install dependencies:
+
+Using npm:
+
+```bash
+npm install
+```
+
+Using yarn:
+
+```bash
+yarn install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+Update the `.env.local` file with your API URL:
+
+```
+NEXT_PUBLIC_API_URL=your_api_url_here
+```
+
+4. Start the development server:
+
+Using npm:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Using yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+Using npm:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Using yarn:
 
-## Deploy on Vercel
+```bash
+yarn build
+yarn start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                 # Next.js app router pages
+├── components/         # Reusable UI components
+├── modules/           # Feature-specific modules
+├── redux/            # Redux store and slices
+├── services/         # API services
+├── styles/           # Global styles
+└── utils/            # Utility functions
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request

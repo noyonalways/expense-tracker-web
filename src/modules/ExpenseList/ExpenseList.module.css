@@ -1,0 +1,219 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dayGroup {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.dateHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.dateHeader h3 {
+  color: #2c3e50;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dailyTotal {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 2fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 2fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableRow:hover {
+  background-color: #f8f9fa;
+}
+
+.overLimit {
+  background-color: #fff5f5;
+}
+
+.overLimit:hover {
+  background-color: #ffe8e8;
+}
+
+.category {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.purpose {
+  color: #5f6c7b;
+}
+
+.amount {
+  color: #2c3e50;
+  font-weight: 500;
+  text-align: right;
+}
+
+.limit {
+  text-align: right;
+}
+
+.limitInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.limitStatus {
+  font-weight: 500;
+  color: #2ecc71;
+}
+
+.limitStatus.exceeded {
+  color: #e74c3c;
+}
+
+.progressContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progressBar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #edf2f7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #2ecc71;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressFill.progressOverLimit {
+  background-color: #e74c3c;
+}
+
+.progressLabel {
+  min-width: 3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8795a1;
+}
+
+.totalSpent {
+  font-size: 0.875rem;
+  color: #8795a1;
+}
+
+.noLimit {
+  color: #8795a1;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.error {
+  text-align: center;
+  color: #e74c3c;
+  padding: 2rem;
+}
+
+.empty {
+  text-align: center;
+  color: #8795a1;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 1rem;
+  }
+
+  .dayGroup {
+    border-radius: 8px;
+  }
+
+  .dateHeader {
+    padding: 0.875rem 1rem;
+  }
+
+  .dateHeader h3 {
+    font-size: 1rem;
+  }
+
+  .dailyTotal {
+    font-size: 0.875rem;
+  }
+
+  .tableHeader,
+  .tableRow {
+    padding: 0.875rem 1rem;
+    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .limitInfo {
+    gap: 0.25rem;
+  }
+
+  .progressBar {
+    height: 6px;
+  }
+
+  .progressLabel {
+    font-size: 0.7rem;
+  }
+
+  .totalSpent {
+    font-size: 0.75rem;
+  }
+}

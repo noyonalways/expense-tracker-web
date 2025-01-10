@@ -1,64 +1,56 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Header } from "../components/Header/Header";
-import {
-  ExpenseForm,
-  ExpenseData,
-} from "../components/ExpenseForm/ExpenseForm";
-import { ExpenseSummary } from "../components/ExpenseSummary/ExpenseSummary";
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
-const categories = [
-  "Groceries",
-  "Transportation",
-  "Healthcare",
-  "Utility",
-  "Charity",
-  "Miscellaneous",
-];
-
 export default function Home() {
-  const [monthlyLimit, setMonthlyLimit] = useState<number | null>(null);
-  const [categoryLimits, setCategoryLimits] = useState<{
-    [key: string]: number;
-  }>({});
-
-  useEffect(() => {
-    if (!monthlyLimit) {
-      const limit = prompt("Please set your monthly spending limit:");
-      if (limit) {
-        setMonthlyLimit(parseFloat(limit));
-      }
-    }
-  }, []);
-
-  const handleExpenseSubmit = async (expense: ExpenseData) => {
-    // TODO: Implement expense submission to backend
-    console.log("Submitting expense:", expense);
-  };
-
-  const handleSetCategoryLimit = (category: string) => {
-    const limit = prompt(`Set spending limit for ${category}:`);
-    if (limit) {
-      setCategoryLimits((prev) => ({
-        ...prev,
-        [category]: parseFloat(limit),
-      }));
-    }
-  };
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
-      <Header monthlyLimit={monthlyLimit} />
-      <main className={styles.main}>
-        <ExpenseForm onSubmit={handleExpenseSubmit} />
-        <ExpenseSummary
-          categories={categories}
-          categoryLimits={categoryLimits}
-          onSetLimit={handleSetCategoryLimit}
-        />
-      </main>
+      <section className={styles.hero}>
+        <div className={styles.content}>
+          <h1 className={styles.title}>
+            Take Control of Your{" "}
+            <span className={styles.highlight}>Finances</span>
+          </h1>
+          <p className={styles.subtitle}>
+            Track expenses, set budgets, and achieve your financial goals with
+            our easy-to-use expense tracker
+          </p>
+          <div className={styles.cta}>
+            <button
+              onClick={() => router.push("/register")}
+              className={styles.primaryButton}
+            >
+              Get Started
+            </button>
+            <button
+              onClick={() => router.push("/login")}
+              className={styles.secondaryButton}
+            >
+              Login
+            </button>
+          </div>
+        </div>
+        <div className={styles.features}>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>📊</div>
+            <h3>Track Expenses</h3>
+            <p>Monitor your spending habits with detailed expense tracking</p>
+          </div>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>🎯</div>
+            <h3>Set Limits</h3>
+            <p>Create spending limits for different expense categories</p>
+          </div>
+          <div className={styles.featureCard}>
+            <div className={styles.featureIcon}>📈</div>
+            <h3>View Analytics</h3>
+            <p>Get insights into your spending patterns</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

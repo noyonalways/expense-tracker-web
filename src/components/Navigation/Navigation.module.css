@@ -1,0 +1,238 @@
+.nav {
+  background-color: #2c3e50;
+  padding: 1rem 0;
+  color: white;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.monthlyLimit {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4ade80;
+  background-color: rgba(74, 222, 128, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.menuContent {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navLink.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 2rem;
+}
+
+.email {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.logoutButton {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.logoutButton:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.logoutButton:active {
+  transform: translateY(0);
+}
+
+/* Mobile menu button */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 2;
+}
+
+.menuIcon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menuButton.menuOpen .menuIcon {
+  background-color: transparent;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.menuIcon::before {
+  top: -6px;
+}
+
+.menuIcon::after {
+  bottom: -6px;
+}
+
+.menuButton.menuOpen .menuIcon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menuButton.menuOpen .menuIcon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .leftSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .monthlyLimit {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .menuContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2c3e50;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .menuContent.menuOpen {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 0;
+  }
+
+  .navLink {
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .userSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+  }
+
+  .email,
+  .limit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logoutButton {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}

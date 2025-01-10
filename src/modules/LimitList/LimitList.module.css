@@ -1,0 +1,139 @@
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.container h2 {
+  color: #2c3e50;
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.limitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.limitCard {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.limitCard.overLimit {
+  background: #fff5f5;
+}
+
+.limitHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.limitHeader h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.limitAmount {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.noLimit {
+  color: #8795a1;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.progressContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.progressBar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #edf2f7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #2ecc71;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressFill.progressOverLimit {
+  background-color: #e74c3c;
+}
+
+.progressLabel {
+  min-width: 3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8795a1;
+}
+
+.limitInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.status {
+  font-weight: 500;
+  color: #2ecc71;
+}
+
+.status.exceeded {
+  color: #e74c3c;
+}
+
+.spent {
+  font-size: 0.875rem;
+  color: #8795a1;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .limitCard {
+    padding: 1rem;
+  }
+
+  .limitHeader h3 {
+    font-size: 1rem;
+  }
+
+  .progressBar {
+    height: 6px;
+  }
+}

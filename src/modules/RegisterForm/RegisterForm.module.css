@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accountLink {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.accountLink a {
+  color: #0070f3;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.accountLink a:hover {
+  text-decoration: underline;
+}
